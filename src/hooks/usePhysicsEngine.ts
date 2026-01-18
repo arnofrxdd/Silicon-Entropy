@@ -352,9 +352,9 @@ export const usePhysicsEngine = () => {
             s.heatsinkTemp = target; // Quantum lock
         }
 
-        // Bounds (Safety clamp is now part of Halt logic but we keep a physical minimum)
-        if (s.currentTemp < -273.15) s.currentTemp = -273.15; // Absolute zero
-        if (s.currentTemp > 1000) s.currentTemp = 1000;      // Vaporization point? lol
+        // Bounds REMOVED for infinite temperature support
+        // if (s.currentTemp < -273.15) s.currentTemp = -273.15; // Absolute zero
+        // if (s.currentTemp > 1000) s.currentTemp = 1000;      // Vaporization point? lol
 
         // History
         historyTimer.current += dt;

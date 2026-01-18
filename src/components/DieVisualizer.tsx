@@ -219,7 +219,7 @@ export const DieVisualizer: FC<DieVisualizerProps> = ({ temp: _temp, load: _load
 
             // --- 2. AUTO-RANGING ---
             // Find min/max for color scaling
-            let minT = 1000, maxT = -1000;
+            let minT = Number.POSITIVE_INFINITY, maxT = Number.NEGATIVE_INFINITY;
             let hotIdx = 0;
             for (let i = 0; i < NUM_CELLS; i++) {
                 if (grid[i] < minT) minT = grid[i];
