@@ -208,7 +208,7 @@ export default function ThermalSim() {
                   <span className="text-[8px] text-white/30 uppercase font-black tracking-widest">FPS</span>
                   <div className="flex items-baseline gap-1">
                     <span className="text-lg font-black tracking-tight text-white/60">
-                      {(uiState.fps || 60).toFixed(0)}
+                      {(uiState.fps ?? 60).toFixed(0)}
                     </span>
                   </div>
                 </div>
@@ -267,7 +267,7 @@ export default function ThermalSim() {
 
               <StatItem
                 label="FPS"
-                value={(uiState.fps || 60).toFixed(0)}
+                value={(uiState.fps ?? 60).toFixed(0)}
                 unit=""
                 icon={RefreshCw}
                 color="text-white/60"

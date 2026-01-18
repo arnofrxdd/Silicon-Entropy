@@ -24,6 +24,7 @@ export const Scene3D: React.FC<Scene3DProps> = ({
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const frameId = useRef(0);
     const lastRenderTime = useRef(0);
+    const rotationVal = useRef({ x: 0, y: 0 });
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -82,9 +83,16 @@ export const Scene3D: React.FC<Scene3DProps> = ({
             }
             ctx.stroke();
 
-            // Cube
-            const rotX = time * 0.0005;
-            const rotY = time * 0.0008;
+            // Cube Rotation Logic - integrated velocity based on FPS
+            // Minimum speed is decently fast (base 1.0), scales infinitely with FPS
+            const speedMultiplier = 1.0 + (fps / 20);
+
+            // Increment rotation - aggressively fast
+            rotationVal.current.x += 0.01 * speedMultiplier;
+            rotationVal.current.y += 0.015 * speedMultiplier;
+
+            const rotX = rotationVal.current.x;
+            const rotY = rotationVal.current.y;
 
             ctx.save();
             ctx.translate(cx, cy - 40);

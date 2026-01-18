@@ -194,9 +194,11 @@ export const usePhysicsEngine = () => {
             if (s.thermalStatus === 'THROTTLING') s.thermalStatus = 'OPTIMAL';
         }
 
-        // Apply simulated FPS
-        const targetFps = 60 - fpsPenalty;
-        s.fps = Math.max(1, targetFps); // Clamp to minimum 1 FPS to avoid "0" on counter
+        // Fake FPS calculation based on CPU Power (GHz)
+        // 5.0 GHz = ~144 FPS standard
+        // Scales linearly with clock speed
+        const rawFps = (s.currentClock * 28.8) - fpsPenalty;
+        s.fps = Math.max(0, rawFps + (Math.random() * 5)); // Add minor jitter
 
         s.currentClock = s.currentClock * 0.9 + targetClock * 0.1;
 
