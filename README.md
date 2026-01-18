@@ -4,7 +4,7 @@
 
 Unlike standard hardware monitors, this project simulates the physical interplay between voltage, frequency, and heat dissipation in real-time using FDM (Finite Difference Method) solvers. It allows users to push hardware beyond theoretical limits, exploring experimental cooling solutions, quantum effects, and sci-fi architectural concepts.
 
-![Project Preview](https://via.placeholder.com/800x450?text=Silicon+Entropy+Preview)
+![Project Preview](https://github.com/arnofrxdd/Silicon-Entropy/blob/screenshots/Screenshot%202026-01-18%20100635.png?raw=true)
 
 ## Core Features
 
