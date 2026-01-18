@@ -5,7 +5,7 @@ interface LogicGateArrayProps {
     tasks: number;
 }
 
-export const LogicGateArray: React.FC<LogicGateArrayProps> = ({ load, tasks }) => {
+export const LogicGateArray: React.FC<LogicGateArrayProps> = ({ load, tasks: _tasks }) => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {

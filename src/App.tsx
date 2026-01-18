@@ -1,4 +1,4 @@
-import React, { useState, useEffect, type FC, type ReactNode } from 'react';
+import { useState, useEffect } from 'react';
 import { Activity, Thermometer, Zap, BarChart3, Minimize2, CloudRain, AlertTriangle, Command, Atom, RefreshCw, Snowflake, Settings, Expand, LayoutGrid } from 'lucide-react';
 import { CONFIG, MATERIALS, COOLING_TYPES } from './constants';
 import { usePhysicsEngine } from './hooks/usePhysicsEngine';
