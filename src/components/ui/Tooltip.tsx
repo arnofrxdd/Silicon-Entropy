@@ -22,7 +22,10 @@ export const Tooltip: FC<TooltipProps> = ({ content, children }) => {
 
     const isSidebarArea = (typeof window !== 'undefined' && window.innerWidth >= 1024) && position.x < 450; // Threshold for control panel area
 
-    const tooltipContent = visible && mounted && (
+    // Check for touch device/mobile
+    const isTouch = typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches;
+
+    const tooltipContent = visible && mounted && !isTouch && (
         <div
             className="fixed z-[9999] p-4 glass-panel rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.6)] border border-white/20 text-[11px] leading-relaxed text-white/90 pointer-events-none animate-in fade-in zoom-in-95 slide-in-from-left-4 duration-300 max-w-[240px] backdrop-blur-3xl"
             style={{

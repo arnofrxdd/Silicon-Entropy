@@ -37,7 +37,7 @@ export const RangeSlider: FC<RangeSliderProps> = ({
                     <span className="text-[8px] font-bold text-white/20 uppercase">{unit}</span>
                 </div>
             </div>
-            <div className="relative h-2 flex items-center">
+            <div className="relative h-6 flex items-center">
                 <input
                     type="range"
                     min={min}
@@ -45,7 +45,7 @@ export const RangeSlider: FC<RangeSliderProps> = ({
                     step={step}
                     value={value}
                     onChange={(e) => onChange(parseFloat(e.target.value))}
-                    className={`w-full h-1 bg-white/5 rounded-full appearance-none cursor-pointer transition-all hover:bg-white/10 ${accentColor}`}
+                    className={`w-full h-6 bg-transparent appearance-none cursor-pointer focus:outline-none ${accentColor}`}
                 />
             </div>
         </div>
